@@ -132,7 +132,7 @@ function draw() {
   trex.collide(soloinvisivel);
 
   
-  
+  console.log("num sei")
   drawSprites();
 }
 
