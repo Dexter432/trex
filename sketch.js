@@ -89,7 +89,7 @@ function draw() {
       chekpoint.play()
     }
     //saltar quando a tecla de espaço é pressionada
-    if(touches.lenght>0||keyDown("space")&& trex.y >= height-00) {
+    if(touches.lenght>0||keyDown("space")&& trex.y >= height-80) {
        trex.velocityY = -13;
       console.log("pulo")
       jump.play()
@@ -148,7 +148,7 @@ function reinicio(){
 function gerarObstaculos(){
  if (frameCount % 60 === 0){
    var obstaculo = createSprite(width,height-30,10,40);
-  obstaculo.velocityX = -(4+pontuacao/100);
+  obstaculo.velocityX =-4;
     //gerar obstáculos aleatórios
     var rand = Math.round(random(1,6));
     switch(rand) {
@@ -169,7 +169,7 @@ function gerarObstaculos(){
    
     //atribuir escala e tempo de duração ao obstáculo         
     obstaculo.scale = 0.5;
-    obstaculo.lifetime = width/20;
+    obstaculo.lifetime = width/50;
    
     //adicionar cada obstáculo ao grupo
     grupodeobstaculos.add(obstaculo);
@@ -179,14 +179,14 @@ function gerarObstaculos(){
 function gerarNuvens() {
   //escreva o código aqui para gerar as nuvens 
   if (frameCount % 60 === 0) {
-    nuvem = createSprite(600,100,40,10);
+    nuvem = createSprite(width,100,40,10);
     nuvem.y = Math.round(random(10,60));
     nuvem.addImage(imagemdanuvem);
     nuvem.scale = 0.5;
     nuvem.velocityX = -3;
     
      //atribuir tempo de duração à variável
-    nuvem.lifetime = width/30;
+    nuvem.lifetime = width/100;
     
     //ajustando a profundidade
     nuvem.depth = trex.depth;
